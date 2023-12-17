@@ -11,6 +11,50 @@
 */
 
 class Todo {
+  // Defining constructor
+  constructor(){
+    this.todo = [];
+  }
+
+  //add function
+  add(task){
+    this.todo.push(task);
+  }
+
+  //remove 
+  remove(indexOfTodo){
+    try{
+      this.todo.splice(indexOfTodo,1);
+    }
+    catch(e){
+      // Error if the index doesn't exist
+      throw new Error("Index doesn't exist in the todo list.")
+
+    }
+  }
+  
+  update(index,updatedTodo){
+      if(index < this.todo.length){
+    this.todo[index] = updatedTodo;
+     }
+}
+
+getAll(){
+  return this.todo;
+}
+
+get(indexOfTodo){
+  if(indexOfTodo < this.todo.length){
+    return this.todo[indexOfTodo];
+  }
+  else{
+    return null;
+  }
+}
+
+clear(){
+  this.todo = [];
+}
 
 }
 

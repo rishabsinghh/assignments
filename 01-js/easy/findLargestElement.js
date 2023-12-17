@@ -6,6 +6,10 @@
 */
 
 function findLargestElement(numbers) {
+    if(numbers.length == 0){
+        return 
+    }
+    return Math.max(...numbers);
     
 }
 
